@@ -17,6 +17,9 @@ describe('DataProcessors', () => {
         cy.get('.description').should('have.length', 5)
           .contains('Tool for searching for Personally-Identifiable Information within CSV data')
         cy.get('.processorColumn').should('have.length', 15)
+        //cy.get('.processorColumn').each.contains('Unique Tag')
+         // .contains('Unique Tag')//.should('have.length', 3)
+          /// he founds only 1 times
         cy.get('.shadedRow').should('have.length', 5)
         cy.get('.configurationsColumn').should('have.length',5)
           .contains('Configurations')
