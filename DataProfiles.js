@@ -29,9 +29,9 @@ describe('Data Profiles', () => {
         })
     
     it('Add new Data Profile1', () => {
-    //   cy.visit('http://localhost:8000/login')
-    //    cy.contains('Local Admin').click()
-    //    cy.contains('Local Admin').click()
+       cy.visit('http://localhost:8000/login')
+        cy.contains('Local Admin').click()
+        cy.contains('Local Admin').click()
         cy.get('#addNewProfileButton').click()
         .wait(500)
         //cy.url().should('include', '/addprofile')
@@ -43,10 +43,10 @@ describe('Data Profiles', () => {
     
     }) 
     it('Add new Data Profile2', () => {
-    //   cy.visit('http://localhost:8000/login')
-    //   cy.contains('Local Admin').click()
-    //   cy.contains('Local Admin').click()
-    //   cy.contains('Data Profiles')
+       cy.visit('http://localhost:8000/login')
+       cy.contains('Local Admin').click()
+       cy.contains('Local Admin').click()
+       cy.contains('Data Profiles')
         cy.get('#addNewProfileButton').click()
         cy.url().should('include', '/profiles/addprofile')
         cy.get('.row').contains('Add Data Profile')
@@ -60,10 +60,10 @@ describe('Data Profiles', () => {
         
     }) 
     it('Add new Data Profile3', () => {
-    //    cy.visit('http://localhost:8000/login')
-    //    cy.contains('Local Admin').click()
-    //    cy.contains('Local Admin').click()
-    //    cy.contains('Data Profiles')
+        cy.visit('http://localhost:8000/login')
+        cy.contains('Local Admin').click()
+        cy.contains('Local Admin').click()
+        cy.contains('Data Profiles')
         cy.get('#addNewProfileButton').click()
         cy.url().should('include', '/profiles/addprofile')
         cy.get('.row').contains('Add Data Profile')
