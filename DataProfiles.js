@@ -29,9 +29,13 @@ describe('Data Profiles', () => {
         })
     
     it('Add new Data Profile1', () => {
+    //   cy.visit('http://localhost:8000/login')
+    //    cy.contains('Local Admin').click()
+    //    cy.contains('Local Admin').click()
         cy.get('#addNewProfileButton').click()
-        cy.url().should('include', '/profiles/addprofile')
-        cy.get('.row').contains('Add Data Profile')
+        .wait(500)
+        //cy.url().should('include', '/addprofile')
+        cy.get('.pageTitle').contains('Add Data Profile')
         cy.get('.inputName')
         cy.get('.formItem')
         cy.get('[placeholder="Search for a Processor"]')
@@ -39,10 +43,10 @@ describe('Data Profiles', () => {
     
     }) 
     it('Add new Data Profile2', () => {
-        cy.visit('http://localhost:8000/login')
-        cy.contains('Local Admin').click()
-        cy.contains('Local Admin').click()
-        cy.contains('Data Profiles')
+    //   cy.visit('http://localhost:8000/login')
+    //   cy.contains('Local Admin').click()
+    //   cy.contains('Local Admin').click()
+    //   cy.contains('Data Profiles')
         cy.get('#addNewProfileButton').click()
         cy.url().should('include', '/profiles/addprofile')
         cy.get('.row').contains('Add Data Profile')
@@ -56,10 +60,10 @@ describe('Data Profiles', () => {
         
     }) 
     it('Add new Data Profile3', () => {
-        cy.visit('http://localhost:8000/login')
-        cy.contains('Local Admin').click()
-        cy.contains('Local Admin').click()
-        cy.contains('Data Profiles')
+    //    cy.visit('http://localhost:8000/login')
+    //    cy.contains('Local Admin').click()
+    //    cy.contains('Local Admin').click()
+    //    cy.contains('Data Profiles')
         cy.get('#addNewProfileButton').click()
         cy.url().should('include', '/profiles/addprofile')
         cy.get('.row').contains('Add Data Profile')
