@@ -61,4 +61,43 @@ counting items
 
 **Add new Data Profile 1/2/3/4/5/6**
 tests different ways to add a new Data Profile
+
+## Resources
+**check items**
+tests if certain words/logos exists
+       
+**count items**
+counting items
+       
+**click items/Add From URL**
+tests add button
+      
+**click items/upload button**
+tests upload button
+    
+**click items/checkbox**
+tests if it possible to click on checkbox & if it is counting
+       
+**click Item Choose Funktion**
+tests dropdown menus
+
+## DataProcessors
+**check items**
+tests if certain words/logos exists
+
+**count items**
+counts items
+
+## ValidationReports
+**check items/dropdown**
+tests if certain words/logos exists & tests the dropdown
+ 
+**count items**
+counts items
+
+
+## Users
+**check items**
+tests if certain words/logos exists
+        
        
