@@ -22,46 +22,11 @@ import './commands';
 //#const accessToken =
 //#  'pk.eyJ1IjoibWFwc29mc3VtaXQiLCJhIjoiY2l1ZDF3dHE5MDAxZDMwbjA0cTR3dG50eSJ9.63Xci-GKFikhAobboF0DVQ';
 
-describe('BeforeEach', function () {
-  before(function () {
+describe('BeforeEach1', function () {
+  beforeEach(function () {
     cy.visit('http://localhost:8000/login')
-    cy.contains('Local Admin').click()
-    cy.contains('Local Admin').click()
-    
+  //  cy.contains('Local Admin').click()
+  //  cy.contains('Local Admin').click()
   })
-
-
-///beforeEach(() => {
-  
-      ///cy.visit('http://localhost:8000/login',{
-      //cy.contains('Local Admin').click()
-      //cy.contains('Local Admin').click()
-      //cy.contains('Data Profiles')
-    
-   /// });
-  })
-  //#  onLoad: contentWindow => {
-  //#    const { L } = contentWindow;
-
-      // mapbox tiles
-  //#    const mapboxTiles = L.tileLayer(
-  //#      `https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/{z}/{x}/{y}?access_token=${accessToken}`,
-  //#      {
-  //#        attribution:
-   //#         '&copy; <a href="https://www.mapbox.com/feedback/">Mapbox</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-     //#   }
-    //#  );
-
-      // create the map
-    //#  const map = L.map('map', {
-    //#    preferCanvas: false,
-    //#  })
-    //#    .setView([51.505, -0.09], 13)
-    //#    .addLayer(mapboxTiles);
-
-    //#  contentWindow.map = map;
-
-      // add leaflet.pm toolbar
-    //#  map.pm.addControls();
-    //#},
-
+})
+ 
