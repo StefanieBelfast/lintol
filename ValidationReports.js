@@ -1,6 +1,5 @@
-describe('ValidationReports', () => {
-
-    it('login', () => {
+describe('ValidationReports', function () {
+    beforeEach(function () {
         cy.visit('http://localhost:8000/login')
         cy.contains('Local Admin').click()
         cy.contains('Local Admin').click()

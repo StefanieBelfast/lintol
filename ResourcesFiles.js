@@ -1,15 +1,11 @@
-
-
-
-
-
-describe('Resources', () => {
-    it('login', () => {
-        cy.visit('http://localhost:8000/login')
-        cy.contains('Local Admin').click()
-        cy.contains('Local Admin').click()
-        cy.contains('Resources').click()
+describe('Resources', function () {
+    before(function () {
+      cy.visit('http://localhost:8000/login')
+      cy.contains('Local Admin').click()
+      cy.contains('Local Admin').click()
+      cy.contains('Resources').click()
     })
+
     it('check items', () => {
         cy.get('.pageTitle').contains('Resources')
         cy.get('.instructions').contains('The list of resources that are available for validation by Lintol')

@@ -1,7 +1,5 @@
-
-
-describe('Users', () => {
-    it('login', () => {
+describe('Users', function () {
+    before(function () {
         cy.visit('http://localhost:8000/login')
         cy.contains('Local Admin').click()
         cy.contains('Local Admin').click()
