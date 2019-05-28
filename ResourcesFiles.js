@@ -28,7 +28,7 @@ describe('Resources', function () {
 
     it('count items', () => {
         cy.get('.checkmark').should('have.length', 25)
-        cy.get('[data-v-28ea4cf6=""]').should('have.length', 98)
+        cy.get('[data-v-28ea4cf6=""]').should('have.length', 101)
         cy.get('.statusLabel').should('have.length', 25)   
         cy.get('.page-item').should('have.length', 8)
         cy.get('.page-link').should('have.length', 8)
@@ -47,7 +47,7 @@ describe('Resources', function () {
         cy.get('#uploadYourFiles').click()
     })
 
-    it('click items/checkbox', () => {
+    it('click items/checkbox1', () => {
         cy.get('.resourceRow').contains('noids-2017-18-wk-0.csv')
         cy.get('[for="activebd11a398-6ad1-4555-a53d-c74fca963098"]').click()
         cy.get('[for="actived1d2a057-496b-4a14-bb45-f39bc1b89a8f"]').click()
@@ -55,13 +55,21 @@ describe('Resources', function () {
         cy.get('.numberOfSelected').contains('3')
         
     })
+
+
      
-    it('click Item Choose Funktion', () =>  {
+    it('click Item Choose Funktion1', () =>  {
         cy.get('#resourceAction__BV_toggle_').click()
         cy.get('.dropdown-item').contains('Run Profile').click()
         cy.get('[selected="selected"]')///.contains('CSV profile').click()
-        cy.get('.runProfileButton').contains('Run Profile').click()
+        cy.get('.runProfileButton').contains('Run Profile')
         cy.get('.close').click()
+    })
+    it('click Item Choose Funktion2', () =>  {
+            cy.get('#resourceAction__BV_toggle_').click()
+            cy.get('.dropdown-item').contains('Delete').click()
+            //cy.get('[selected="selected"]')///.contains('CSV profile').click()
+            //cy.get('.DeleteButton').contains('Delete')
 
         //$('button').on('click', (e) => {
         //    const one = confirm('first confirm')
