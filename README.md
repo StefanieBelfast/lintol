@@ -44,9 +44,11 @@ I'm testing features on this website  ***
 I did the test site by site, you have at the left hand side 5 buttons(my 5 tests) and an extra test for the Login Page
 ## login.js
 **existing items**
+
 testing items/words which should be there
 
 **LINTOL login**
+
 tests the login
 
 ## Data Profiles
