@@ -1,11 +1,11 @@
-describe('LINTOL login', () => {
+describe('existing items', () => {
     it('login', () => {
         cy.visit('http://localhost:8000/login')
         cy.contains(' Terms & Conditions')
       })
     //if you use a index before, you will not need it 
      
-    it('existing items', () => {
+    it('LINTOL login', () => {
         cy.contains('Please Login with the following services')
         cy.contains('Sign in with CKAN')
         cy.contains('Local Admin').click()
