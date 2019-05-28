@@ -63,6 +63,20 @@ describe('Resources', () => {
         cy.get('[selected="selected"]')///.contains('CSV profile').click()
         cy.get('.runProfileButton').contains('Run Profile').click()
         cy.get('.close').click()
+
+        //$('button').on('click', (e) => {
+        //    const one = confirm('first confirm')
+        //  
+        //    if (one) {
+        //      const two = confirm('second confirm')
+        //  
+        //    if (!two) {
+        //      const three = confirm('third confirm')
+          
+        //      confirm('third confirm was ' + three)
+        //    }
+        //  }
+        //  })
         //cy.get('[value="3464aed3-1da8-40ee-8c52-feb6f832da81"]').click()
         //cy.get('.dropdown-item').contains('Delete').click()
         //cy.get('Cancel').click()
@@ -76,7 +90,6 @@ describe('Resources', () => {
           //.click('#dateFilter option[value=geojson]')
           //.waitForElementVisible('#resources-row', visiblePauseTime)
           //browser.assert.value("#resourceName", "waste-sites.geojson")
-          //.end() 
-        
+          //.end()     
     })
 })    

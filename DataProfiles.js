@@ -1,10 +1,9 @@
 describe('Data Profiles', () => {
-        it('login', () => {
-            cy.visit('http://localhost:8000/login')
-            cy.contains('Local Admin').click()
-            cy.contains('Local Admin').click()
+    it('login', () => {
+        cy.visit('http://localhost:8000/login')
+        cy.contains('Local Admin').click()
+        cy.contains('Local Admin').click()
         cy.contains('Data Profiles')
-        
         })
     //if you use a index before, you will not need it 
      
@@ -20,16 +19,15 @@ describe('Data Profiles', () => {
         })
 
     it('count items', () => {
-        cy.get('.profileRow').should('have.length', 3)
-        cy.get('.profileColumn').should('have.length', 15)
-        cy.get('.profileMainColumn').should('have.length', 3)   
-        cy.get('[data-v-47b830ea=""]').should('have.length', 17)
-        cy.get('.nav-item').should('have.length', 6)
-           
+        cy.get('.profileRow').should('have.length', 5)
+        cy.get('.profileColumn').should('have.length', 25)
+        cy.get('.profileMainColumn').should('have.length', 5)   
+        cy.get('[data-v-47b830ea=""]').should('have.length', 19)
+        cy.get('.nav-item').should('have.length', 6)   
         })
     
     it('Add new Data Profile1', () => {
-       cy.visit('http://localhost:8000/login')
+        cy.visit('http://localhost:8000/login')
         cy.contains('Local Admin').click()
         cy.contains('Local Admin').click()
         cy.get('#addNewProfileButton').click()
@@ -43,10 +41,10 @@ describe('Data Profiles', () => {
     
     }) 
     it('Add new Data Profile2', () => {
-       cy.visit('http://localhost:8000/login')
-       cy.contains('Local Admin').click()
-       cy.contains('Local Admin').click()
-       cy.contains('Data Profiles')
+        cy.visit('http://localhost:8000/login')
+        cy.contains('Local Admin').click()
+        cy.contains('Local Admin').click()
+        cy.contains('Data Profiles')
         cy.get('#addNewProfileButton').click()
         cy.url().should('include', '/profiles/addprofile')
         cy.get('.row').contains('Add Data Profile')
@@ -57,8 +55,8 @@ describe('Data Profiles', () => {
         cy.get('.editConfigurationLabel').click()
         cy.get('.field-wrap').click()
         cy.get('.xmark').click()
-        
     }) 
+
     it('Add new Data Profile3', () => {
         cy.visit('http://localhost:8000/login')
         cy.contains('Local Admin').click()
@@ -76,4 +74,52 @@ describe('Data Profiles', () => {
         cy.get('.xmark').click()
     })    
     
+    it('Add new Data Profile4', () => {
+        cy.visit('http://localhost:8000/login')
+        cy.contains('Local Admin').click()
+        cy.contains('Local Admin').click()
+        cy.contains('Data Profiles')
+        cy.get('#addNewProfileButton').click()
+        cy.url().should('include', '/profiles/addprofile')
+        cy.get('.row').contains('Add Data Profile')
+        cy.get('.inputName').type("test")
+        cy.get('.inputDescription').type('this is a describtion')
+        cy.get('[placeholder="Search for a Processor"]').click()
+        cy.get('.dropdown-menu').contains('Personally-Identifiable Information Spotter').click()
+
+    })
+
+    it('Add new Data Profile5', () => {
+        cy.visit('http://localhost:8000/login')
+        cy.contains('Local Admin').click()
+        cy.contains('Local Admin').click()
+        cy.contains('Data Profiles')
+        cy.get('#addNewProfileButton').click()
+        cy.url().should('include', '/profiles/addprofile')
+        cy.get('.row').contains('Add Data Profile')
+        cy.get('.inputName').type("test")
+        cy.get('.inputDescription').type('this is a describtion')
+        cy.get('[placeholder="Search for a Processor"]').click()
+        cy.get('.dropdown-menu').contains('Boundary').click()
+        cy.get('.editConfigurationLabel').click()
+        cy.get('.field-wrap').contains('Belfast')
+        cy.get('.xmark').click()
+       
+    })
+
+    it('Add new Data Profile6', () => {
+        cy.visit('http://localhost:8000/login')
+        cy.contains('Local Admin').click()
+        cy.contains('Local Admin').click()
+        cy.contains('Data Profiles')
+        cy.get('#addNewProfileButton').click()
+        cy.url().should('include', '/profiles/addprofile')
+        cy.get('.row').contains('Add Data Profile')
+        cy.get('.inputName').type("test")
+        cy.get('.inputDescription').type('this is a describtion')
+        cy.get('[placeholder="Search for a Processor"]').click()
+        cy.get('.dropdown-menu').contains('gov.uk Register').click()
+        cy.get('.xmark').click()
+    })
+
 }) 

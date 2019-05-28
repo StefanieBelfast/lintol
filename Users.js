@@ -16,7 +16,6 @@ describe('Users', () => {
         cy.get('.rightSeparator').contains('seeder').click()
         cy.get('.rightSeparator').contains('Ad Min')
         cy.get('#resourcesButton').contains('Add new Resource')
-        
-        
+       
     })
 })

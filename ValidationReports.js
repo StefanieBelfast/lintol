@@ -1,12 +1,12 @@
-describe('Data Profiles', () => {
+describe('ValidationReports', () => {
 
     it('login', () => {
         cy.visit('http://localhost:8000/login')
         cy.contains('Local Admin').click()
         cy.contains('Local Admin').click()
         cy.contains('Validation Reports').click()
-        
-        })
+    })
+
     it('check items/dropdown', () => {
         cy.get('.pageTitle').contains('Validation Reports')
         cy.get('.instructions').contains('Here is a list of generated reports for this account')
@@ -16,7 +16,7 @@ describe('Data Profiles', () => {
         cy.get('#profileFilter')//.click()
         /// dropdown menu
         cy.get('.viewButton')//.click('id=[viewReport + 'report.name']')
-        cy.get('id=[viewReport + "report.name"]').click()
+        ///cy.get('id=[viewReport + "report.name"]').click()
         /// get the View Report
     })
 
