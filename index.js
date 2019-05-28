@@ -22,18 +22,24 @@ import './commands';
 //#const accessToken =
 //#  'pk.eyJ1IjoibWFwc29mc3VtaXQiLCJhIjoiY2l1ZDF3dHE5MDAxZDMwbjA0cTR3dG50eSJ9.63Xci-GKFikhAobboF0DVQ';
 
-beforeEach(() => {
-   
-  describe('Data Profiles', () => {
-    it('login', () => {
-        cy.visit('http://localhost:8000/login')
-        cy.contains('Local Admin').click()
-        cy.contains('Local Admin').click()
-    cy.contains('Data Profiles')
+describe('BeforeEach', function () {
+  before(function () {
+    cy.visit('http://localhost:8000/login')
+    cy.contains('Local Admin').click()
+    cy.contains('Local Admin').click()
     
-    })
   })
-})
+
+
+///beforeEach(() => {
+  
+      ///cy.visit('http://localhost:8000/login',{
+      //cy.contains('Local Admin').click()
+      //cy.contains('Local Admin').click()
+      //cy.contains('Data Profiles')
+    
+   /// });
+  })
   //#  onLoad: contentWindow => {
   //#    const { L } = contentWindow;
 

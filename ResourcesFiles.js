@@ -1,11 +1,14 @@
-import { finished } from "stream";
+
+
+
+
 
 describe('Resources', () => {
     it('login', () => {
         cy.visit('http://localhost:8000/login')
         cy.contains('Local Admin').click()
         cy.contains('Local Admin').click()
-    cy.contains('Resources').click()
+        cy.contains('Resources').click()
     })
     it('check items', () => {
         cy.get('.pageTitle').contains('Resources')
