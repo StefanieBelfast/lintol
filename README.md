@@ -44,60 +44,60 @@ I'm testing features on this website  ***
 I did the test site by site, you have at the left hand side 5 buttons(my 5 tests) and an extra test for the Login Page
 ## login.js
 **existing items**
- -testing items/words which should be there
+  -testing items/words which should be there
 
 **LINTOL login**
- -tests the login
+  -tests the login
 
 ## Data Profiles
 **login**
- -login in website
+  -login in website
         
 **check items**
- -tests if certain words/logos exists
+  -tests if certain words/logos exists
 
 **count items**
-counting items
+  -counting items
 
 **Add new Data Profile 1/2/3/4/5/6**
-tests different ways to add a new Data Profile
+  -tests different ways to add a new Data Profile
 
 ## Resources
 **check items**
-tests if certain words/logos exists
+  -tests if certain words/logos exists
        
 **count items**
-counting items
+  -counting items
        
 **click items/Add From URL**
-tests add button
+  -tests add button
       
 **click items/upload button**
-tests upload button
+  -tests upload button
     
 **click items/checkbox**
-tests if it possible to click on checkbox & if it is counting
+  -tests if it possible to click on checkbox & if it is counting
        
 **click Item Choose Funktion**
-tests dropdown menus
+  -tests dropdown menus
 
 ## DataProcessors
 **check items**
-tests if certain words/logos exists
+  -tests if certain words/logos exists
 
 **count items**
-counts items
+  -counts items
 
 ## ValidationReports
 **check items/dropdown**
-tests if certain words/logos exists & tests the dropdown
+  -tests if certain words/logos exists & tests the dropdown
  
 **count items**
-counts items
+  -counts items
 
 
 ## Users
 **check items**
-tests if certain words/logos exists
+  -tests if certain words/logos exists
         
        
