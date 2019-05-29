@@ -41,7 +41,7 @@ describe('Resources', function () {
         cy.get('#addURLs').contains('Add URLs to Lintol', {force:true}).click()
         cy.get('.warningText').contains('The Url Link field is required.')
         cy.get('.close').click()
-    })
+})
 
     it('click items/upload button', () => {
         cy.get('#uploadYourFiles').click()
@@ -65,38 +65,41 @@ describe('Resources', function () {
         cy.get('.runProfileButton').contains('Run Profile')
         cy.get('.close').click()
     })
-    it('click Item Choose Funktion2', () =>  {
-            cy.get('#resourceAction__BV_toggle_').click()
-            cy.get('.dropdown-item').contains('Delete').click()
-            //cy.get('[selected="selected"]')///.contains('CSV profile').click()
-            //cy.get('.DeleteButton').contains('Delete')
+    
 
-        //$('button').on('click', (e) => {
-        //    const one = confirm('first confirm')
-        //  
-        //    if (one) {
-        //      const two = confirm('second confirm')
-        //  
-        //    if (!two) {
-        //      const three = confirm('third confirm')
-          
-        //      confirm('third confirm was ' + three)
-        //    }
-        //  }
-        //  })
-        //cy.get('[value="3464aed3-1da8-40ee-8c52-feb6f832da81"]').click()
-        //cy.get('.dropdown-item').contains('Delete').click()
-        //cy.get('Cancel').click()
-        //cy.get('Cancel').click()
+    it('can control application confirms', function (done) {
+        let count = 0
+      
+        // make sure you bind to this **before** the
+        // confirm method is called in your application
+        //
+        // this event will automatically be unbound when this
+        // test ends because it's attached to 'cy'
+        cy.on('window:confirm', (str) => {
+          count += 1
+          throw error
+        })
+        //switch (count) {
 
+        //done()
+   // }
+ 
+
+  // click the button causing the confirm to fire
+    cy.get('#resourceAction__BV_toggle_').click()
+    cy.get('.dropdown-item').contains('Delete').click()
+})
+    /*
         
-          //cy.get('#dateFilter')
-          //.waitForElementVisible('#app', 2000)
-          //.click('#resources')
-          //.waitForElementVisible('#resources-row', visiblePauseTime)
-          //.click('#dateFilter option[value=geojson]')
-          //.waitForElementVisible('#resources-row', visiblePauseTime)
-          //browser.assert.value("#resourceName", "waste-sites.geojson")
-          //.end()     
+    //it('click Item Choose Funktion2', () =>  {
+        
+        //cy.window().should('have.property','confirm')
+        //.should('have.property', 'target', true)
+        //cy.get('[selected="selected"]')///.contains('CSV profile').click()
+        //cy.get('.DeleteButton').contains('Delete')
+        //})
     })
-})    
+    
+        
+})*/
+}) 
