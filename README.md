@@ -50,7 +50,7 @@ I did the test site by site, you have at the left hand side 5 buttons(my 5 tests
   -tests the login
 
 ## Data Profiles
-**login**
+**beforeEach**
   -login in website
         
 **check items**
@@ -63,6 +63,9 @@ I did the test site by site, you have at the left hand side 5 buttons(my 5 tests
   -tests different ways to add a new Data Profile
 
 ## Resources
+**before** 
+ -login in website
+ 
 **check items**
   -tests if certain words/logos exists
        
@@ -78,10 +81,16 @@ I did the test site by site, you have at the left hand side 5 buttons(my 5 tests
 **click items/checkbox**
   -tests if it possible to click on checkbox & if it is counting
        
-**click Item Choose Funktion**
+**click Item Choose Funktion1**
   -tests dropdown menus
 
+**can control application confirms**
+  -test dropdown menus & (popup window)
+
 ## DataProcessors
+**before** 
+ -login in website
+ 
 **check items**
   -tests if certain words/logos exists
 
@@ -89,6 +98,9 @@ I did the test site by site, you have at the left hand side 5 buttons(my 5 tests
   -counts items
 
 ## ValidationReports
+**beforeEach** 
+ -login in website
+ 
 **check items/dropdown**
   -tests if certain words/logos exists & tests the dropdown
  
