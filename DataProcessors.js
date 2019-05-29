@@ -6,13 +6,6 @@ describe('DataProcessors', function () {
     cy.contains('Data Processors').click()
   })
 
-
-  it('check items', () => {
-    cy.get('.pageTitle').contains('Data Processors')
-    cy.get('.instructions').contains('These are the list of processors available to your profiles.')
-    cy.get('.processorSearch')//.should('placeholder')        
-  })
-
   it('count items', () => {
     cy.get('.rightSeparator').should('have.length', 5)
       .contains('CSV Checking by GoodTables')
@@ -24,5 +17,10 @@ describe('DataProcessors', function () {
     cy.get('.configurationsColumn').should('have.length', 5)
       .contains('Configurations')
 
+  })
+  it('check items', () => {
+    cy.get('.pageTitle').contains('Data Processors')
+    cy.get('.instructions').contains('These are the list of processors available to your profiles.')
+    cy.get('.processorSearch').click().type('test')      
   })
 })

@@ -14,8 +14,9 @@ describe('ValidationReports', function () {
         cy.get('#userFilter')//.click()
         cy.get('#profileFilter')//.click()
         /// dropdown menu
-        cy.get('.viewButton')//.click('id=[viewReport + 'report.name']')
-        ///cy.get('id=[viewReport + "report.name"]').click()
+        cy.get('.shadedRow').should('have.length', 5)
+          .contains('Data Profile Name [test4]')
+        //.contains('View Report').click()//('[id="viewReport + report.name"]')
         /// get the View Report
     })
 
