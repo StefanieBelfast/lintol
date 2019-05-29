@@ -1,5 +1,5 @@
-describe('existing items', () => {
-    it('login', () => {
+describe('login', () => {
+    it('existing items', () => {
         cy.visit('http://localhost:8000/login')
         cy.contains(' Terms & Conditions')
       })
