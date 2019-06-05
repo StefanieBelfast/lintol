@@ -4,7 +4,6 @@ describe('testing menu site Users', function () {
         cy.contains('Local Admin').click()
             .wait(5000)
         cy.get('body').then(($body) => {
-
             cy.log($body)
             if ($body.text().includes('Please Login')) {
                 // yup found it
@@ -16,7 +15,6 @@ describe('testing menu site Users', function () {
                 cy.log('else')
             }
         })
-
         cy.contains('Users').click()
     })
     //using if else, because login need 2x but sometime only one, to avoid any error cause this reason using if else

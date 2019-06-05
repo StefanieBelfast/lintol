@@ -4,7 +4,6 @@ describe('testing menu site ValidationReports', function () {
     cy.contains('Local Admin').click()
       .wait(5000)
     cy.get('body').then(($body) => {
-
       cy.log($body)
       if ($body.text().includes('Please Login')) {
         // yup found it
@@ -16,7 +15,6 @@ describe('testing menu site ValidationReports', function () {
         cy.log('else')
       }
     })
-
     cy.contains('Validation Reports').click()
   })
   //using if else, because login need 2x but sometime only one, to avoid any error cause this reason using if else
@@ -36,26 +34,21 @@ describe('testing menu site ValidationReports', function () {
   })
   it('exist a dropdown Profile Filter', () => {
     cy.get('#profileFilter')//.click()
-    /// dropdown menu
+    //TO DO dropdown menu
   })
   it('count rows(shadedRow) and with text"Data Profile Name [test4]"', () => {
     cy.get('.shadedRow').should('have.length', 5)
       .contains('Data Profile Name [test4]')
-    //.contains('View Report').click()//('[id="viewReport + report.name"]')
-    /// get the View Report
   })
-
   it('count left column(rightSeparator) down', () => {
     cy.get('.rightSeparator').should('have.length', 5)
   })
-  //here is the test failing because of the "beforeEach"
   it('count middle/right column(reportColumn) down', () => {
     cy.get('.reportColumn').should('have.length', 20)
   })
   it('count right column(col-sm-4) with signs down', () => {
     cy.get('.col-sm-4').should('have.length', 15)
   })
-
   it('count red circle', () => {
     cy.get('.ragError').should('have.length', 5)
   })

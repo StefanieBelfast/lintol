@@ -36,10 +36,10 @@ describe('testing menu site Resources', function () {
         cy.get('#uploadYourFiles').contains('Upload your Files')
     })
     it('exist a dropdown Type Filter', () => {
-        cy.get('#typeFilter')//.contains('Upload your Files')
+        cy.get('#typeFilter').contains('Filter by Type')
     })
     it('exist a dropdown source Filter', () => {
-        cy.get('#sourceFilter')//.contains('Upload your Files')
+        cy.get('#sourceFilter').contains('Filter by Source')
     })
     it('exist a dropdown date Filter', () => {
         cy.get('#dateFilter')
@@ -47,7 +47,6 @@ describe('testing menu site Resources', function () {
     it('exist a Search field ', () => {
         cy.get('#searchValidations').type('google1.com')
     })
-
     it('exist a dropdown with text "Choose Function', () => {
         cy.get('#resourceAction__BV_toggle_')
     })
@@ -75,7 +74,6 @@ describe('testing menu site Resources', function () {
     it('exist in the header of the container text"Action"', () => {
         cy.get('.headerContainer').contains('Action')
     })
-
     it('count checkboxes', () => {
         cy.get('.checkmark').should('have.length', 25)
     })
@@ -88,7 +86,6 @@ describe('testing menu site Resources', function () {
     it('count plot of page boxes in the bottom', () => {
         cy.get('.page-link').should('have.length', 8)
     })
-
 
     it('use a button "Add From URL" without fill in to get a warning text"The Url Link field is required."', () => {
         cy.get('#addFromURLButton').click()
@@ -123,22 +120,11 @@ describe('testing menu site Resources', function () {
 
     it('click the dropdownmenu Choose Funktion to find text "Delete" and can control application confirms', function (done) {
         let count = 0
-
-        // make sure you bind to this **before** the
-        // confirm method is called in your application
-        //
-        // this event will automatically be unbound when this
-        // test ends because it's attached to 'cy'
         cy.on('window:confirm', (str) => {
             count += 1
             throw error
         })
-        //switch (count) {
-
-        //done()
-        // }
-
-
+        
         // click the button causing the confirm to fire
         cy.get('#resourceAction__BV_toggle_').click()
         cy.get('.dropdown-item').contains('Delete').click()
