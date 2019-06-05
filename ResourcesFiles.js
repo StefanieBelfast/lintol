@@ -35,8 +35,12 @@ describe('testing menu site Resources', function () {
     it('exist a button with text "Upload your Files"', () => {
         cy.get('#uploadYourFiles').contains('Upload your Files')
     })
-    it('exist a dropdown Type Filter', () => {
-        cy.get('#typeFilter').contains('Filter by Type')
+    it('exist a dropdown Type Filter & process, check if its work', () => {
+        cy.get('.custom-select').contains('Filter by Type').click({ force: true })
+
+        cy.get('[value="geojson"]').click({ force: true })
+        cy.get('.filenameLabel').contains('waste-sites.geojson',{ force: true })
+
     })
     it('exist a dropdown source Filter', () => {
         cy.get('#sourceFilter').contains('Filter by Source')
@@ -44,8 +48,9 @@ describe('testing menu site Resources', function () {
     it('exist a dropdown date Filter', () => {
         cy.get('#dateFilter')
     })
-    it('exist a Search field ', () => {
-        cy.get('#searchValidations').type('google1.com')
+    it('exist a Search field,input text "google1",check if its works ', () => {
+        cy.get('#searchValidations').type('google1')
+        cy.get('.filenameLabel').contains('google1.com')
     })
     it('exist a dropdown with text "Choose Function', () => {
         cy.get('#resourceAction__BV_toggle_')
@@ -124,7 +129,7 @@ describe('testing menu site Resources', function () {
             count += 1
             throw error
         })
-        
+
         // click the button causing the confirm to fire
         cy.get('#resourceAction__BV_toggle_').click()
         cy.get('.dropdown-item').contains('Delete').click()
