@@ -3,12 +3,25 @@ describe('testing menu site Data Profiles', function () {
     beforeEach(function () {
         cy.visit('http://localhost:8000/login')
         cy.contains('Local Admin').click()
-        cy.contains('Local Admin').click()
-        cy.contains('Data Profiles')
+            .wait(5000)
+        cy.get('body').then(($body) => {
+
+            cy.log($body)
+            if ($body.text().includes('Please Login')) {
+                // yup found it
+                cy.log('if')
+                cy.get('.local-admin').click()
+            } else {
+                // nope not here
+                cy.contains('Data Profiles').click()
+                cy.log('else')
+            }
+        })
+
+        cy.contains('Data Profiles').click()
     })
-
-    //if you use a index before, you will not need it 
-
+    //using if else, because login need 2x but sometime only one, to avoid any error cause this reason using if else
+    //using beforeEach, because this website is logging out after a certain time
     it('get headline(pageTitle)and check words "Data Profiles"', () => {
         cy.get('.pageTitle').contains('Data Profiles')
     })
@@ -71,10 +84,10 @@ describe('testing menu site Data Profiles', function () {
         cy.get('[placeholder="Search for a Processor"]').click()
         cy.get('.dropdown-menu').contains('CSV Checking by CSVLint').click()
         cy.get('.editConfigurationLabel').click()
-    //    cy.get('#addProfile').click()
-    //    cy.get('.profileMainColumn').contains('this is a describtion of CSV Checking by CSVLint')
-    //the 2 comands above are working, I // because every time the test ist running 1 additional Profile appears, so the counting tests given an error   
-    ///TO DO get Edit button this line,click and test if its possible to edit it
+        //    cy.get('#addProfile').click()
+        //    cy.get('.profileMainColumn').contains('this is a describtion of CSV Checking by CSVLint')
+        //the 2 comands above are working, I // because every time the test ist running 1 additional Profile appears, so the counting tests given an error   
+        ///TO DO get Edit button this line,click and test if its possible to edit it
     })
 
     it('Add new Data Profile with "CSV Checking by GoodTables"', () => {

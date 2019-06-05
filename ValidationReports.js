@@ -2,9 +2,25 @@ describe('testing menu site ValidationReports', function () {
   beforeEach(function () {
     cy.visit('http://localhost:8000/login')
     cy.contains('Local Admin').click()
-    cy.contains('Local Admin').click()
+      .wait(5000)
+    cy.get('body').then(($body) => {
+
+      cy.log($body)
+      if ($body.text().includes('Please Login')) {
+        // yup found it
+        cy.log('if')
+        cy.get('.local-admin').click()
+      } else {
+        // nope not here
+        cy.contains('Validation Reports').click()
+        cy.log('else')
+      }
+    })
+
     cy.contains('Validation Reports').click()
   })
+  //using if else, because login need 2x but sometime only one, to avoid any error cause this reason using if else
+  //using beforeEach, because this website is logging out after a certain time
 
   it('get headline(pageTitle)and check words "Validation Reports"', () => {
     cy.get('.pageTitle').contains('Validation Reports')
@@ -32,6 +48,7 @@ describe('testing menu site ValidationReports', function () {
   it('count left column(rightSeparator) down', () => {
     cy.get('.rightSeparator').should('have.length', 5)
   })
+  //here is the test failing because of the "beforeEach"
   it('count middle/right column(reportColumn) down', () => {
     cy.get('.reportColumn').should('have.length', 20)
   })
