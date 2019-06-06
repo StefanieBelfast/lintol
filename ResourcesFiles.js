@@ -23,6 +23,12 @@ describe('testing menu site Resources', function () {
         cy.contains('Resources').click()
     })
 
+    it('exist a Search field,input text "google1",check if its works ', () => {
+        cy.get('#searchValidations').type('google1')
+        cy.get('.filenameLabel').contains('google1.com')
+    })
+
+
     it('get headline(pageTitle)and check words "Resources"', () => {
         cy.get('.pageTitle').contains('Resources')
     })
@@ -36,10 +42,8 @@ describe('testing menu site Resources', function () {
         cy.get('#uploadYourFiles').contains('Upload your Files')
     })
     it('exist a dropdown Type Filter & process, check if its work', () => {
-        cy.get('.custom-select').contains('Filter by Type').click({ force: true })
-
-        cy.get('[value="geojson"]').click({ force: true })
-        cy.get('.filenameLabel').contains('waste-sites.geojson',{ force: true })
+        cy.get('#typeFilter').select('geojson', { force: true })
+        cy.get('.filenameLabel').should('have.length', 1).contains('waste-sites.geojson')
 
     })
     it('exist a dropdown source Filter', () => {
@@ -48,10 +52,7 @@ describe('testing menu site Resources', function () {
     it('exist a dropdown date Filter', () => {
         cy.get('#dateFilter')
     })
-    it('exist a Search field,input text "google1",check if its works ', () => {
-        cy.get('#searchValidations').type('google1')
-        cy.get('.filenameLabel').contains('google1.com')
-    })
+
     it('exist a dropdown with text "Choose Function', () => {
         cy.get('#resourceAction__BV_toggle_')
     })
@@ -113,29 +114,29 @@ describe('testing menu site Resources', function () {
     })
 
 
-
-    it('click the dropdownmenu Choose Funktion to find text "Run Profile"', () => {
-        cy.get('#resourceAction__BV_toggle_').contains('Choose Function').click()
-        cy.get('.dropdown-item').contains('Run Profile').click()
-        cy.get('[selected="selected"]')///.contains('CSV profile').click()
-        cy.get('.runProfileButton').contains('Run Profile')
-        cy.get('.close').click()
-    })
-
-
-    it('click the dropdownmenu Choose Funktion to find text "Delete" and can control application confirms', function (done) {
-        let count = 0
-        cy.on('window:confirm', (str) => {
-            count += 1
-            throw error
+    /*
+        it('click the dropdownmenu Choose Funktion to find text "Run Profile"', () => {
+            cy.get('#resourceAction__BV_toggle_').contains('Choose Function').click()
+            cy.get('.dropdown-item').contains('Run Profile').click()
+            cy.get('[selected="selected"]')///.contains('CSV profile').click()
+            cy.get('.runProfileButton').contains('Run Profile')
+            cy.get('.close').click()
         })
-
-        // click the button causing the confirm to fire
-        cy.get('#resourceAction__BV_toggle_').click()
-        cy.get('.dropdown-item').contains('Delete').click()
-        //TO DO grab the pop up window
-
-    })
-
+    */
+    /*
+        it('click the dropdownmenu Choose Funktion to find text "Delete" and can control application confirms', function (done) {
+            let count = 0
+            cy.on('window:confirm', (str) => {
+                count += 1
+                throw error
+            })
+    
+            // click the button causing the confirm to fire
+            cy.get('#resourceAction__BV_toggle_').click()
+            cy.get('.dropdown-item').contains('Delete').click()
+            //TO DO grab the pop up window
+    
+        })
+    */
 
 })    
