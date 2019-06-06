@@ -22,6 +22,12 @@ describe('testing menu site Data Profiles', function () {
     })
     //using if else, because login need 2x but sometime only one, to avoid any error cause this reason using if else
     //using beforeEach, because this website is logging out after a certain time
+
+    it('exist a dropdown Name Filter & process, check if its work', () => {
+        cy.get('#nameFilter').select('x', { force: true })
+        cy.get('.profileName').should('have.length', 2).contains('x')
+    })
+
     it('get headline(pageTitle)and check words "Data Profiles"', () => {
         cy.get('.pageTitle').contains('Data Profiles')
     })
@@ -43,11 +49,9 @@ describe('testing menu site Data Profiles', function () {
     it('get left side(container) and check text "Data Profiles"', () => {
         cy.get('.container').contains('Data Profiles')
     })
-
     it('exist LINTOL logo', () => {
         cy.get('[src="/img/logo.474572e2.svg"]')
     })
-
     it('count rows(profileRow)', () => {
         cy.get('.profileRow').should('have.length', 10)
     })
@@ -57,7 +61,6 @@ describe('testing menu site Data Profiles', function () {
     it('count left column(profileMainColumn) down', () => {
         cy.get('.profileMainColumn').should('have.length', 10)
     })
-
     it('count menu item', () => {
 
         cy.get('.nav-item').should('have.length', 6)

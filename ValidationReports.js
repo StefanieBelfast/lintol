@@ -26,16 +26,22 @@ describe('testing menu site ValidationReports', function () {
   it('get second headline(instructions)and check words "Here is a list of generated reports for this account"', () => {
     cy.get('.instructions').contains('Here is a list of generated reports for this account')
   })
+
   it('exist a dropdown Date Filter', () => {
-    cy.get('#dateFilter')//.click()
+    cy.get('#dateFilter')//.select('??', { force: true })
+  //  cy.get('.profileName').should('have.length', ??).contains('??')
   })
   it('exist a dropdown User Filter', () => {
-    cy.get('#userFilter')//.click()
+    cy.get('#userFilter')//.select('??', { force: true })
+  //  cy.get('.profileName').should('have.length', ??).contains('??')
   })
-  it('exist a dropdown Profile Filter', () => {
-    cy.get('#profileFilter')//.click()
-    //TO DO dropdown menu
-  })
+  //TO DO dropdown menu, you have to fill in only the number/name in instead off ??
+  it('exist a dropdown Profile Name Filter & process, check if its work', () => {
+    cy.get('#profileFilter').select('CSV Profile', { force: true })
+    cy.get('.profileName').should('have.length', 3).contains('Report CSV Profile')
+
+})
+
   it('count rows(shadedRow) and with text"Data Profile Name [test4]"', () => {
     cy.get('.shadedRow').should('have.length', 5)
       .contains('Data Profile Name [test4]')
