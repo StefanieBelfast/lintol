@@ -143,7 +143,7 @@ describe('testing menu site Data Profiles', function () {
         cy.get('.inputDescription').type('this is a describtion')
         cy.get('[placeholder="Search for a Processor"]').click()
         cy.get('.dropdown-menu').contains('gov.uk Register').click()
-        cy.get('.xmark').click()
+        
     })
 
 }) 
